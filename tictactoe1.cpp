@@ -70,6 +70,14 @@ int checkwin(){
     
     
 }
+int checkdraw(){
+    for(int i=0;i<9;i++){
+        if(board[i]=='.'){
+            return 0;
+        }
+    }
+    return 1;
+}
 
 void playersturn(char ch,int position){
     
@@ -97,10 +105,11 @@ if(checkwin()==1){
     if(checkwin()==0){
     cout<<player2<<" "<<"wins!!";
     exit(0);}
-    if(x==0){
-        cout<<"game is draw!!\n";
+    if(checkdraw()==1){
+        cout<<"game is draw\n";
         exit(0);
     }
+   
 printboard();
 
 }
